@@ -80,3 +80,9 @@ pip install python-chess
 11. Further Customization:
 Users can customize learning parameters, reward functions, and other aspects of the code to experiment and improve the agent's performance.
 Feel free to experiment with different parameters, reward functions, and training episodes to observe how the agent learns to play chess.
+
+12. Further Improvements::
+Implement a graphical chessboard representation using a library like Pygame or Tkinter to make the interface more visually appealing.
+
+Allow the agent to update its Q-values in real-time during human-agent gameplay. This could provide faster adaptation to human strategies.
+
