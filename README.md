@@ -7,6 +7,7 @@ The provided Python code implements a Q-learning-based chess-playing agent. Q-le
 QAgent:
 
 This class represents the Q-learning agent. It has methods for initializing the agent, choosing actions, getting legal moves, calculating Q-values, and updating Q-values.
+
 3. Functions:
 
 __init__(self, learning_rate=0.1, discount_factor=0.9, exploration_prob=0.1):
@@ -36,11 +37,15 @@ Calculates the reward for a given action in the current board state.
 human_vs_agent(agent, human_side):
 
 Allows a human to play against the trained Q-learning agent.
+
+
 4. Training the Agent:
 To train the agent, call the train_q_learning_agent function with the desired number of episodes (training iterations).
 python
 Copy code
 trained_agent = train_q_learning_agent(episodes=1000)
+
+
 5. Playing Against the Agent:
 Use the human_vs_agent function to play against the trained agent.
 Set human_side to chess.WHITE if the human wants to play as White.
@@ -48,18 +53,30 @@ python
 Copy code
 human_side = chess.WHITE  # Set to chess.WHITE if the human is playing as White
 human_vs_agent(trained_agent, human_side)
+
+
 6. Playing Moves:
 When playing moves, use UCI (Universal Chess Interface) format for move input.
+
+
 7. Observing Rewards:
 The calculate_reward function defines the rewards for different scenarios (checkmate, check, capture, castling, material advantage). Adjustments to the reward function can be made as needed.
+
+
 8. Display:
 The display_board function shows the current state of the chessboard.
+
+
 9. Notes:
 The code uses the python-chess library for chess-related functionalities.
+
+
 10. Dependencies:
 The code depends on the chess library. Install it using:
 Copy code
 pip install python-chess
+
+
 11. Further Customization:
 Users can customize learning parameters, reward functions, and other aspects of the code to experiment and improve the agent's performance.
 Feel free to experiment with different parameters, reward functions, and training episodes to observe how the agent learns to play chess.
