@@ -69,11 +69,11 @@ def train_q_learning_agent(episodes):
             legal_moves = agent.get_legal_moves(current_state)
             if legal_moves:
                 action = agent.choose_action(current_state) 
+                board.push_uci(action)#move But is it for white or black
+                next_state = board.fen()
                 print("Before Rewards function")
                 reward = calculate_reward(board,action)
                 print("After Rewards function")#Taking rewards after move has happened
-                board.push_uci(action)#move But is it for white or black
-                next_state = board.fen()
                 agent.update_q_value(current_state, action, reward, next_state)
                 print("After moving with"+action)
                 display_board(board)
@@ -82,7 +82,7 @@ def train_q_learning_agent(episodes):
     return agent
 def calculate_reward(board,action):
     reward=0
-    board.push_uci(action)
+    #board.push_uci(action)
     if board.is_checkmate():
         print("For checkmate 1.0")
         reward= 1.0  # Checkmate reward
@@ -93,7 +93,7 @@ def calculate_reward(board,action):
         print("For just nothing 0.0")
         reward =0.0  # Draw reward
     elif board.is_capture(chess.Move.from_uci(action)):
-        captured_piece = board.piece_at()
+        captured_piece = board.piece_at(chess.Move.from_uci(action).to_square)
         print(captured_piece)
         if captured_piece:
             piece_type = captured_piece.piece_type
