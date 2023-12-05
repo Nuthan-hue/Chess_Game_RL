@@ -56,7 +56,7 @@ human_vs_agent(trained_agent, human_side)
 
 
 6. Playing Moves:
-When playing moves, use UCI (Universal Chess Interface) format for move input.
+When playing moves, use [UCI (Universal Chess Interface)](https://en.wikipedia.org/wiki/Universal_Chess_Interface) format for move input.
 
 
 7. Observing Rewards:
